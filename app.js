@@ -26,7 +26,7 @@ async function getMessage() {
 
     }
     try{
-        const response = await fetch('https://api.openai.com/v1/chat/completions', options)
+        const response = await fetch('https://api.openai.com/v1/engines/gpt-3.5-turbo/completions', options)
         const data = await response.json()
         console.log(data)
         outPutElement.textContent = data.choices[0].message.content
