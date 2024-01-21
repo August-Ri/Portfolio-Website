@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team Seas</title>
+        <link rel="stylesheet" href="teamseas.css" />
+        <link rel="icon" type="image/png" href="Images/Teamseas_favicon.png">
+        <script src="teamseas.js"></script>
+
+    </head>
+    <body>
+        <div class="div_t">
+        <header>
+            <div class="navbar">
+                <div class="logo_div"><a href="#"><img class="logo" src="Images/Teamseas_favicon.png"></a></div>
+                <ul class="links">
+                    <li><a class="navbart" href="about">About</a></li>
+                    <li><a class="navbart" href="problems">Problems</a></li>
+                    <li><a class="navbart" href="conclusion">Conclusion</a></li>
+                    <li><a class="navbart" href="participate">Participate</a></li>
+                </ul>
+                <a href="#" class="action_btn">Join Now</a>
+                <div class="toggle_btn">
+                    <div class="burger bars"><a href="#"><img class="burger" src="Images/Burger.png"></a></div>
+                </div>
+            </div>
+
+            <div class="dropdown_menu">
+                <li><a class="navbart" href="about">About</a></li>
+                <li><a class="navbart" href="problems">Problems</a></li>
+                <li><a class="navbart" href="conclusion">Conclusion</a></li>
+                <li><a class="navbart" href="participate">Participate</a></li>
+                <li><a href="#" class="action_btn">Join Now</a></li>
+            </div>
+        </header>
+        </div>
+
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn');
+            const toggleBtnIcon = document.querySelector('toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu');
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+            }
+        </script>
+
+        <div class="container">
+            <div class="section" id="about"><h1>About</h1></div>
+            <div style="background-color: black;" class="section"><h1>Problems</h1></div>
+            <div class="section"><h1>Conclusion</h1></div>
+            <div class="section"><h1>Participate</h1></div>
+        </div>
+        
+    </body>
+
+</html>
