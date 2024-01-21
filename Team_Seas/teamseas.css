@@ -8,6 +8,11 @@
   src: url(Fonts/SFPRODISPLAYBOLD.OTF);
 }
 
+@font-face{
+  font-family: Sf Pro I;
+  src: url(Fonts/SFPRODISPLAYLIGHTITALIC.OTF);
+}
+
 html {
   background: url(Images/Background.png) no-repeat center center fixed;
   -webkit-background-size: cover;
