@@ -91,6 +91,7 @@ a{
 
 header{
   position: fixed;
+  width: 100vw;
   padding: 0.2rem;
   z-index: 999;
 }
