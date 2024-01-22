@@ -31,14 +31,18 @@ html {
   width: 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0; /* Ensure there is no margin */
+}
+
 body{
   width: 100vw;
-  height: 100vh;
   margin: 0;
 }
 
 .container{
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
