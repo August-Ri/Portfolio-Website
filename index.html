@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-    <div class="content">
-      <h1>Under Development</h1>
-      <p>I'm working on something amazing.</p>
-      <p>Stay tuned!</p>
-      <div class="loader"></div>
-      <div class="contacts">
-        <a href="https://www.instagram.com/augustas_armalis/" target="_blank">Instagram</a>
-        <a href="https://twitter.com/AugustasArmalis" target="_blank">Twitter</a>
-        <a href="https://www.facebook.com/augustasarmalis/" target="_blank">Facebook</a>
-      </div>
+    <head>
 
-    </div>
-  </div>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team Seas</title>
+        <link rel="stylesheet" href="teamseas.css" />
+        <link rel="icon" type="image/png" href="Images/Teamseas_favicon.png">
+        <script src="teamseas.js"></script>
 
-  <a href="Team_Seas/teamseas.html">
-    <button>Team seas</button>
-  </a>
+    </head>
+    <body>
+        <div class="div_t">
+        <header>
+            <div class="navbar">
+                <div class="logo_div"><a href="#teamseas"><img class="logo" src="Images/Teamseas_favicon.png"></a></div>
+                <ul class="links">
+                    <li><a class="navbart" href="#about">About</a></li>
+                    <li><a class="navbart" href="#problems">Problems</a></li>
+                    <li><a class="navbart" href="#conclusion">Conclusion</a></li>
+                    <li><a class="navbart" href="#participate">Participate</a></li>
+                </ul>
+                <a href="https://teamseas.org/" class="action_btn">Join Now</a>
+                <div class="toggle_btn">
+                    <div class="burger bars"><a href="#"><img class="burger" src="Images/Burger.png"></a></div>
+                </div>
+            </div>
+
+            <div class="dropdown_menu">
+                <li><a class="navbart" href="#about">About</a></li>
+                <li><a class="navbart" href="#problems">Problems</a></li>
+                <li><a class="navbart" href="#conclusion">Conclusion</a></li>
+                <li><a class="navbart" href="#participate">Participate</a></li>
+                <li><a href="https://teamseas.org/" class="action_btn">Join Now</a></li>
+            </div>
+        </header>
+        </div>
+
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn');
+            const toggleBtnIcon = document.querySelector('toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu');
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+            }
+        </script>
+
+        <div class="container">
+            <div class="section" id="teamseas">
+                <div class="first_section_div">
+                    <p class="first_section_1p">#Team Seas</p>
+                    <p class="first_section_2p">Remove trash from water</p>
+                    <div class="icon-scroll"></div>
+                    <p class="first_section_3p">scroll down</p>
+                </div>
+            </div>
+
+            <div class="section" id="about">
+                <div class="second_section_div">
+                    <p class="first_section_1p">About</p>
+                </div>
+            </div>
+
+            <div class="section" id="problems">                
+                <div class="second_section_div">
+                    <p class="first_section_1p">Problems</p>
+                </div>
+            </div>
+                
+            <div class="section" id="conclusion">
+                <div class="second_section_div">
+                    <p class="first_section_1p">Conclusions</p>
+                </div>
+            </div>
 
 
-</body>
+            <div class="section" id="participate">
+                <div class="second_section_div">
+                    <p class="first_section_1p">Participate</p>
+                </div>
+            </div>
+            
+        </div>
+        
+    </body>
+
 </html>
