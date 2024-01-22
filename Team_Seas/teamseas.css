@@ -90,7 +90,7 @@ a{
 
 
 header{
-  position:relative;
+  position: fixed;
   padding: 0.2rem;
   z-index: 999;
 }
