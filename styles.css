@@ -90,17 +90,16 @@ a {
 }
 
 .action_btn {
-  background-color: #00AFFF;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #3498db;
   color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-family: 'Roboto', sans-serif;
-  cursor: pointer;
-  transition: 0.15s;
-  margin-right: 10px;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .action_btn:hover {
