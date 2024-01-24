@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Team Seas</title>
-        <link rel="stylesheet" href="teamseas.css" />
-        <link rel="icon" type="image/png" href="Images/Teamseas_favicon.png">
-        <script src="teamseas.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Seas</title>
+    <link rel="stylesheet" href="teamseas.css">
+    <link rel="icon" type="image/png" href="Images/Teamseas_favicon.png">
+    <script src="teamseas.js"></script>
+</head>
 
-    </head>
-    <body>
-        <div class="div_t">
+<body>
+    <div class="div_t">
         <header>
             <div class="navbar">
                 <div class="logo_div"><a href="#teamseas"><img class="logo" src="Images/Teamseas_favicon.png"></a></div>
@@ -19,9 +19,9 @@
                     <li><a class="navbart" href="#about">About</a></li>
                     <li><a class="navbart" href="#problems">Problems</a></li>
                     <li><a class="navbart" href="#conclusion">Conclusion</a></li>
-                    <li><a class="navbart" href="#participate">Participate</a></li>
+                    <li><a class="navbart" href="#participate">Sources</a></li>
                 </ul>
-                <a href="https://teamseas.org/" class="action_btn">Join Now</a>
+                <a href="https://teamseas.org/" target="_blank" class="action_btn">Join Now</a>
                 <div class="toggle_btn">
                     <div class="burger bars"><a href="#"><img class="burger" src="Images/Burger.png"></a></div>
                 </div>
@@ -31,106 +31,205 @@
                 <li><a class="navbart" href="#about">About</a></li>
                 <li><a class="navbart" href="#problems">Problems</a></li>
                 <li><a class="navbart" href="#conclusion">Conclusion</a></li>
-                <li><a class="navbart" href="#participate">Participate</a></li>
-                <li><a href="https://teamseas.org/" class="action_btn">Join Now</a></li>
+                <li><a class="navbart" href="#participate">Sources</a></li>
+                <li><a href="https://teamseas.org/" target="_blank" class="action_btn">Join Now</a></li>
             </div>
         </header>
+    </div>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+        };
+    </script>
+
+    <div class="container">
+        <div class="section" id="teamseas">
+            <div class="first_section_div">
+                <p class="first_section_1p">#Team Seas</p>
+                <p class="first_section_2p">Remove trash from water</p>
+                <div class="icon-scroll"></div>
+                <p class="first_section_3p">scroll down</p>
+            </div>
         </div>
 
-        <script>
-            const toggleBtn = document.querySelector('.toggle_btn');
-            const toggleBtnIcon = document.querySelector('toggle_btn i')
-            const dropDownMenu = document.querySelector('.dropdown_menu');
-
-            toggleBtn.onclick = function () {
-                dropDownMenu.classList.toggle('open')
-            }
-        </script>
-
-        <div class="container">
-            <div class="section" id="teamseas">
-                <div class="first_section_div">
-                    <p class="first_section_1p">#Team Seas</p>
-                    <p class="first_section_2p">Remove trash from water</p>
-                    <div class="icon-scroll"></div>
-                    <p class="first_section_3p">scroll down</p>
-                </div>
-            </div>
-
-            <div class="section" id="about">
-                <div class="second_section_div">
-                  <p class="second_section_1p">“<span style="font-family: Sf Pro I;">#Team Seas</span>” is an international collaborative fundraiser that was started by YouTubers <span style="font-family: Sf Pro B; color: #00AFFF;">Mr Beast</span> and <span style="font-family: Sf Pro B; color: #00AFFF;">Mark Rober</span>.</p>
-                  <div class="mr_mark_div">
+        <div class="section" id="about">
+            <div class="second_section_div">
+                <p class="second_section_1p">“<span style="font-family: Sf Pro I;">#Team Seas</span>” is an international collaborative fundraiser that was started by YouTubers <span style="font-family: Sf Pro B; color: #00AFFF;">Mr Beast</span> and <span style="font-family: Sf Pro B; color: #00AFFF;">Mark Rober</span>.</p>
+                <div class="mr_mark_div">
                     <a href="https://www.youtube.com/@MrBeast" target="_blank"><img src="Images/Mr_Beast.png" class="mr_beast"></a>
                     <a href="https://www.youtube.com/@MarkRober" target="_blank"><img src="Images/Mark_Rober.png" class="mr_beast"></a>
-                  </div>
                 </div>
             </div>
-
-            <div class="section">
-                <div class="second_section_div">
-                  <video class="mr_video" controls>
-                    <source src="Video/Mr_Beast.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-
-
-            <div class="section" id="problems">                
-                <div class="first_problem_section_div">
-                    <p class="first_section_1p">#1 Water Pollution</p>
-                </div>
-            </div>
-                
-            <div class="section" id="problems">                
-                <div class="second_problem_section_div">
-                    <p class="second_problem_1p">Water pollution is getting worse, posing a critical threat to our environment and well-being. </p>
-                </div>
-            </div>
-                
-            <div class="section" id="problems">                
-                <div class="second_problem_section_div" style="background-image: url('Images/1_image.png'); width: 100vw;">
-                    <div class="down_div">
-                        <p class="down_div_text">Factories, farms letting dirty chemicals into water and not throwing away trash the right way are fuelling water pollution, harming ecosystems, wildlife, and human health. </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section" id="problems">                
-                <div class="second_problem_section_div" style="background-image: url('Images/2_image.png'); width: 100vw;">
-                    <div class="down_div">
-                        <p class="down_div_text">Enforce strict regulations on industry and agriculture, promote sustainable practices, and engage communities in responsible waste disposal. Upgrade water infrastructure for widespread access to clean water. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="section" id="problems">                
-                <div class="second_problem_section_div" style="background-image: url('Images/3_image.png'); width: 100vw;">
-                    <div class="down_div">
-                        <p class="down_div_text">Act now to solve water pollution. Sustainable practices, measures, and community involvement are our tools to ensure a healthier future for future generations.</p>
-                    </div>
-                </div>
-            </div>
-
-            
-
-                
-
-            <div class="section" id="conclusion">
-                <div class="second_section_div">
-                    <p class="first_section_1p">Conclusions</p>
-                </div>
-            </div>
-
-
-            <div class="section" id="participate">
-                <div class="second_section_div">
-                    <p class="first_section_1p">Participate</p>
-                </div>
-            </div>
-            
         </div>
-        
-    </body>
 
+        <div class="section">
+            <div class="second_section_div">
+                <video class="mr_video" controls>
+                    <source src="Video/Mr_Beast.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+        </div>
+
+        <div class="section" id="problems">
+            <div class="first_problem_section_div">
+                <p class="first_section_1p">#1 Water Pollution</p>
+                <a class="problem_1p" href="#second_problem">2# Animal Suffering</a><br>
+                <a class="problem_1p" href="#third_problem">3# Health Problems</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div">
+                <p class="second_problem_1p">Water pollution is getting worse, posing a critical threat to our environment and well-being. </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/1_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Factories, farms letting dirty chemicals into water and not throwing away trash the right way are fuelling water pollution, harming ecosystems, wildlife, and human health. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/2_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Enforce strict regulations on industry and agriculture, promote sustainable practices, and engage communities in responsible waste disposal. Upgrade water infrastructure for widespread access to clean water. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/3_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Act now to solve water pollution. Sustainable practices, measures, and community involvement are our tools to ensure a healthier future for future generations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="second_problem">
+            <div class="first_problem_section_div">
+                <p class="first_section_1p">#2 Animal Suffering</p>
+                <a class="problem_1p" href="#problems">1# Water Pollution</a><br>
+                <a class="problem_1p" href="#third_problem">3# Health Problems</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div">
+                <p class="second_problem_1p">Animals are getting smaller and smaller, the ocean is getting more and more plastic and most of us are not doing anything about it.  Many animal species are beginning to decline.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/4_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Pollution, the trash and the chemicals that we dump into water are causing the aquatic world to lose species, depopulate the ocean, and worsen the ecosystem.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/5_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">We humans, as a whole community have to collaborate, change plastic to a material that is less harmful to nature, in other words reduce the use of plastic, notice our faults and try to improve them, take a very responsible approach to pollution and laws.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/6_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Our thoughtless actions are destroying many of the ocean's inhabitants and making it difficult for them to survive.  To change this, laws and our action must be tightened.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="third_problem">
+            <div class="first_problem_section_div">
+                <p class="first_section_1p">#3 Health Problems</p>
+                <a class="problem_1p" href="#problems">1# Water Pollution</a><br>
+                <a class="problem_1p" href="#second_problem">2# Animal Suffering</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div">
+                <p class="second_problem_1p">Water pollution poses a critical threat to human health, as contaminants jeopardize essential water sources. The urgency of addressing this issue stems from water's fundamental role in sustaining life.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/7_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Industrial discharges, agricultural runoff, and improper waste disposal are key contributors to water pollution. The repercussions include harm to aquatic ecosystems, wildlife, and a direct impact on human health through the spread of waterborne diseases.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/8_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Stringent regulations on waste disposal, sustainable agricultural practices, and advanced water treatment facilities are crucial measures. Public awareness campaigns reinforce responsibility, ensuring a collective effort to combat water pollution.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/9_image.png'); width: 100vw;">
+                <div class="down_div">
+                    <p class="down_div_text">Addressing water pollution is imperative for a sustainable future, demanding immediate action to safeguard both human health and the environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section second_problem_section" id="conclusion">
+            <div class="second_problem_section_div">
+                <p class="second_problem_1p"><span style="font-family: Sf Pro I;">#Team Seas</span> has collected over <span style="font-family: Sf Pro B; color: #00AFFF;">$33,48 million</span> and cleaned over <span style="font-family: Sf Pro B; color: #00AFFF;">14 million pounds</span> of trash.</p>
+            </div>
+            <div class="second_problem_section_div">
+                <p class="second_problem_1p">Successfully <span style="font-family: Sf Pro I;">removed, deployed</span> new technologies, and <span style="font-family: Sf Pro I;">raised global awareness</span>, making a significant impact on marine conservation.</p>
+            </div>
+        </div>
+
+        <div class="section" id="participate">
+            <div class="second_problem_section_div" style="flex-direction: column;">
+                <a class="problem_1p" href="https://teamseas.org/" target="_blank" style="margin-bottom: 10px;">TeamSeas.org</a>
+                <a class="problem_1p" href="https://www.youtube.com/" target="_blank" style="margin-bottom: 10px;">YouTube.com</a>
+                <a class="problem_1p" href="https://www.nationalgeographic.com/environment/article/plastic-pollution" target="_blank" style="margin-bottom: 10px;">NatGeo.com</a>
+                <a class="problem_1p" href="https://www.noaa.gov/" target="_blank" style="margin-bottom: 10px;">Noaa.gov</a>
+            </div>
+        </div>
+
+
+        <div class="section" style="height: 13vh;">
+            <div class="footer">
+                <div>
+                    <p>
+                        <span style="font-family: Sf Pro B;">Company</span>: 
+                        <span style="font-family: Sf Pro I;">Ieva Glebauskaitė</span>, 
+                        <span style="font-family: Sf Pro I;">Meda Šiaulavičiūtė</span>, 
+                        <span style="font-family: Sf Pro I;">Motiejus Varnauskas</span>
+                    </p>
+                </div>
+                <a href="https://augustasarmalis.com/" style="padding-left: 10px; cursor: pointer;" target="_blank"> 
+                    Made By <span style="font-family: Sf Pro I; color: #00AFFF;">Augustas Armalis</span>
+                </a>
+            </div>
+        </div>
+
+        </div>
+        <div class="section">
+            <div class="second_problem_section_div" style="background-image: url('Images/rick.jpg'); width: 100vw;"></div>
+        </div>
+</body>
 </html>
+
+        
