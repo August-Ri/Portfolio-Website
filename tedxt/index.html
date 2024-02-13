@@ -61,20 +61,33 @@
         }
         
         button:hover {
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0.8);
             transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <form id="subscriptionForm">
-        <h2>Subscribe to My Newsletter</h2>
+        <h2>Subscribe to Our Newsletter</h2>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
         <button type="submit">Subscribe</button>
     </form>
+
+    <div class="thank-you" id="thankYouMessage">
+        <h2>Thank you for subscribing!</h2>
+    </div>
 
     <script>
         document.getElementById("subscriptionForm").addEventListener("submit", function(event) {
@@ -120,11 +133,8 @@
                     if (!response.ok) {
                         throw new Error('Subscription failed');
                     }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Subscription successful:', data);
-                    alert('Subscription successful!');
+                    document.getElementById("subscriptionForm").classList.add("hidden");
+                    document.getElementById("thankYouMessage").style.display = "block";
                 })
                 .catch(error => {
                     console.error('Error:', error);
