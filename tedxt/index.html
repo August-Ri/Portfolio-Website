@@ -3,82 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Subscription Landing Page</title>
+    <title>Newsteller</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
+            width: 300px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         h1 {
-            text-align: center;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
+            margin-bottom: 30px;
         }
 
         input[type="text"],
-        input[type="email"] {
-            width: 100%;
+        input[type="email"],
+        input[type="submit"] {
+            width: 90%;
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         input[type="submit"] {
-            width: 100%;
-            padding: 10px;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s;
+            background-color: transparent;
+            background-color: white;
+            color: #000000;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            transform: scale(1.1);
+            color: #000000; /* Change button color to white on hover */
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Subscribe to Our Newsletter</h1>
-    <form id="subscription-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
+    <h1>Subscribe Now</h1>
+    <form id="subscriber-form">
+        <input type="text" id="firstname" name="firstname" placeholder="Your First Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
         <input type="submit" value="Subscribe">
     </form>
 </div>
 
 <script>
-    document.getElementById("subscription-form").addEventListener("submit", function (event) {
+    document.getElementById("subscriber-form").addEventListener("submit", function (event) {
         event.preventDefault();
-        const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmNkZTc1YWNkNDQ5Nzc2NWRjOTZmYzRjYTM0OTdjYzJkZmM5OWUyNTU5MTZiYzk4NmFhMmMxYjViZjJkNWMzMjE0MTJmMWRiMDdmZWVkODciLCJpYXQiOiIxNzA3ODM0NzY3LjgyNjA1MSIsIm5iZiI6IjE3MDc4MzQ3NjcuODI2MDU2IiwiZXhwIjoiMTcwNzkyMTE2Ny44MjM5ODAiLCJzdWIiOiI4NDk0NTUiLCJzY29wZXMiOltdfQ.Gb66UbMyi7Jahf4f_HXqXOFDUcOmdoKh3VSEPAigja9ozIjxg1cWEVWDH8KwT17Og9d9WygXwvU1FMTcsleTXw";
+        const firstname = document.getElementById("firstname").value;
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWZiN2RmYzA3OWM2YzMxMDA4NmU1M2JiMzE5YmVmYmY3MjA1MDM4MTA3OTk5YjZjZDM0ZGUzNzU5NGY2NzZlMzQ1MDBkZDZjNjA2N2Q1NzkiLCJpYXQiOiIxNzA3ODM5MzUwLjczODA4OSIsIm5iZiI6IjE3MDc4MzkzNTAuNzM4MDk0IiwiZXhwIjoiNDg2MTQzOTM1MC43MzU2ODciLCJzdWIiOiI4NDk0NTUiLCJzY29wZXMiOltdfQ.WTX6K6yPB9y1hCVHdCShDzxim06Be6pZN1yjBmY24Q-n6m3VJkTIfGWgO7nujacCSDlB08j_nD9CVkyFEd7KpA";
         const url = "https://api.sender.net/v2/subscribers";
 
         fetch(url, {
@@ -89,24 +98,22 @@
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                "name": name,
-                "email": email
+                "email": email,
+                "firstname": firstname
             })
         }).then(response => response.json())
           .then(data => {
               if (data.success) {
-                  alert("Subscription successful! Thank you for subscribing.");
+                  alert("Thank you for subscribing!");
               } else {
                   alert("Subscription failed. Please try again later.");
               }
-          })
-          .catch(error => {
+          }).catch(error => {
               console.error("Error:", error);
-              alert("Subscription failed. Please try again later.");
+              alert("An error occurred. Please try again later.");
           });
     });
 </script>
 
 </body>
 </html>
-
