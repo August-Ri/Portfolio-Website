@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Subscription Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Subscribe to Our Newsletter</h1>
+    <form id="subscription-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Subscribe">
+    </form>
+</div>
+
+<script>
+    document.getElementById("subscription-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmNkZTc1YWNkNDQ5Nzc2NWRjOTZmYzRjYTM0OTdjYzJkZmM5OWUyNTU5MTZiYzk4NmFhMmMxYjViZjJkNWMzMjE0MTJmMWRiMDdmZWVkODciLCJpYXQiOiIxNzA3ODM0NzY3LjgyNjA1MSIsIm5iZiI6IjE3MDc4MzQ3NjcuODI2MDU2IiwiZXhwIjoiMTcwNzkyMTE2Ny44MjM5ODAiLCJzdWIiOiI4NDk0NTUiLCJzY29wZXMiOltdfQ.Gb66UbMyi7Jahf4f_HXqXOFDUcOmdoKh3VSEPAigja9ozIjxg1cWEVWDH8KwT17Og9d9WygXwvU1FMTcsleTXw";
+        const url = "https://api.sender.net/v2/subscribers";
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + token,
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                "name": name,
+                "email": email
+            })
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  alert("Subscription successful! Thank you for subscribing.");
+              } else {
+                  alert("Subscription failed. Please try again later.");
+              }
+          })
+          .catch(error => {
+              console.error("Error:", error);
+              alert("Subscription failed. Please try again later.");
+          });
+    });
+</script>
+
+</body>
+</html>
+
