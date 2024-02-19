@@ -1,12 +1,79 @@
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+body, html {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.leftis, .rightis {
+  flex: 1;
+  height: calc(100vh - 140px); /* Full height of viewport minus 70px from top and bottom */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px; /* Set margin to 70px on all sides */
+}
+
+.leftis {
+  background-color: #f0f0f0; /* Left div background color */
+}
+
+.rightis {
+  background-color: #ccc; /* Right div background color */
+}
+
+.leftis .box {
+  background-image: url('untitled.png');
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Make the height of the box 100% */
+}
+
+.box {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column; /* Stack divs vertically */
+  }
+
+  .leftis, .rightis {
+      height: 50vh; /* Half height of viewport */
+      padding: 20px
+  }
+
+}
+
+@keyframes openUp {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1.05);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.rightis .box {
+  animation: openUp 1.5s ease forwards;
 }
 
 form {
@@ -14,7 +81,12 @@ form {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   transition: all 0.3s ease;
 }
 
@@ -63,6 +135,15 @@ button:hover {
 }
 
 .thank-you {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
 }
