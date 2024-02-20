@@ -1,19 +1,191 @@
 html {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  height: 100%; /* Set body's height to 100% of viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column;
 }
 
-.section {
-  margin-top: 70px;
+
+.container {
+  margin: 70px;
+  width: 90%;
+  animation: openUp 2s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 5px;
+  border-right: none;
+  border-left: none;
+  
+}
+
+::-webkit-scrollbar{
+  width: 0;
+}
+
+
+.accordion {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: top;
-  width: 100vw;
-  height: 1000vh;
-  color: white
+  justify-content: center; /* Center the text horizontally */
+  align-items: center;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  outline: none;
+  width: 100%;
+  transition: background-color 0.4s ease;
+}
+
+.Name {
+  margin: 0; /* Remove default margin */
+  flex: 1; /* Take up remaining space */
+  text-align: center; /* Center the text horizontally */
+}
+
+.arrow {
+  margin-left: 10px; /* Push the arrow to the right */
+}
+
+.arrow img {
+  width: 20px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 1s ease; /* Add transition for rotation */
+}
+
+.active .arrow img {
+  transform: rotate(180deg); /* Rotate the image when active */
+  transform-origin: center; /* Set transform origin to the center */
+}
+
+
+
+
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000); /* Use cubic-bezier timing function */
+  max-height: 0; /* Start with a collapsed state */
+}
+
+.panel p {
+  margin: 0; /* Remove default margin */
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+
+@keyframes openUp {
+  0% {
+      opacity: 0;
+      transform: scaleY(0);
+  }
+  7% {
+      transform: scaleY(0);
+  }
+  100% {
+      opacity: 1;
+      transform: scaleY(1);
+  }
+}
+
+
+.burger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  animation: openUp 2s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 6px auto;
+  transition: all 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+}
+
+.sliding-menu {
+  position: fixed;
+  top: 0;
+  right: 0; /* Changed from 'left' to 'right' */
+  width: 100%;
+  height: 0;
+  background-color: #585858;
+  overflow: hidden;
+  transition: height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  z-index: 999;
+}
+
+.menu-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+.menu-content nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-content nav ul li {
+  margin-bottom: 10px;
+}
+
+.menu-content nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Add styles for the 'X' icon */
+.burger-menu.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.sliding-menu.open {
+  height: 100vh;
+}
+
+.circle {
+  --circle-size: 40px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1.7px solid white;
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  z-index: 999;
 }
