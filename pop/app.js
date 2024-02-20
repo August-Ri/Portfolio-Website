@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
-        // Calculate total height including nested panels
         var totalHeight = panel.scrollHeight;
         var nestedPanels = panel.querySelectorAll('.panel');
         nestedPanels.forEach(function(nestedPanel) {
@@ -19,13 +18,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded',  function () {
+// Menu
+
+document.addEventListener('DOMContentLoaded', function () {
   var burgerMenu = document.getElementById('burger-menu');
   var slidingMenu = document.getElementById('sliding-menu');
+  var body = document.querySelector('body');
 
   burgerMenu.addEventListener('click', function () {
     toggleMenu();
     toggleIcon();
+    toggleScroll();
   });
 
   function toggleMenu() {
@@ -34,6 +37,10 @@ document.addEventListener('DOMContentLoaded',  function () {
 
   function toggleIcon() {
     burgerMenu.classList.toggle('open');
+  }
+
+  function toggleScroll() {
+    body.classList.toggle('open-menu');
   }
 });
 
@@ -89,3 +96,21 @@ const tick = () => {
 };
 
 tick();
+
+// Reading Bar
+
+window.addEventListener('scroll', function() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.body.clientHeight;
+  const scrollPercent = ((scrollTop) / (documentHeight - windowHeight)) * 100;
+
+  const readingProgressBar = document.getElementById('reading-progress-bar');
+
+  readingProgressBar.style.height = scrollPercent + '%';
+});
+
+window.addEventListener('load', function() {
+  const readingProgressBar = document.getElementById('reading-progress-bar');
+  readingProgressBar.style.height = '0';
+});
