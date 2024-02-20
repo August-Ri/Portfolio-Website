@@ -253,6 +253,7 @@ a {
 }
 
 @media (max-width: 768px) {
+
   .container {
       flex-direction: column;
   }
@@ -263,57 +264,72 @@ a {
   }
 
   .rightis .box {
-      height: 100%;
+      height: 70%;
+      border-width: 2px;
+      padding-top:5px;
+      padding-bottom:5px;
   }
 
   input {
       width: 90%;
-      height: 100px;
+      height: 70px;
   }
 
   button {
       width: 93%;
-      height: 100px;
+      height: 70px;
   }
 
   #header {
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       margin: 0;
   }
 
   #alt {
-      font-size: 1.4rem;
+      font-size: 1rem;
+      margin: 0;
+      margin-bottom: 10px;
   }
 }
 
 @media (max-width: 1300px) {
   input {
       width: 90%;
-      height: 60px;
+      height: 50px;
   }
 
   button {
       width: 95%;
-      height: 60px;
-      margin-bottom: 40px;
+      height: 50px;
+      margin-bottom: 20px;
   }
 
   .rightis .box {
-      height: 100%;
+      height: 85%;
   }
 
   #header {
-      font-size: 2.1rem;
-      margin: 0;
-  }
+    font-size: 1.5rem;
+    margin: 0;
+}
 
-  #alt {
-      font-size: 1.4rem;
-  }
+#alt {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
 
-  .circle {
-      display: none;
-  }
+.circle {
+    display: none;
+}
+
+input{
+  font-size: 1rem;
+}
+
+::placeholder{
+  font-size: 1.1rem;
+}
 }
 
 .circle {
