@@ -24,6 +24,12 @@ html {
   src: url('SFPRODISPLAYTHINITALIC.OTF');
 }
 
+@font-face {
+  font-family: 'Apple_Medium';
+  src: url('SFPRODISPLAYMEDIUM.OTF');
+}
+
+
 body {
   overflow-x: hidden;
   margin: 0;
@@ -33,6 +39,29 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+body.open-menu {
+  overflow: hidden;
+}
+
+#Strong{
+  font-family: 'Apple_Medium', Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle farthest-corner at center center, #FFFFFF 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#Medium{
+  font-family: 'Apple_Bold', Arial, Helvetica, sans-serif;
+}
+
+#Normal{
+  font-family: 'Apple_Regular', Arial, Helvetica, sans-serif;
+}
+
+#Light{
+  font-family: 'Apple_Italic', Arial, Helvetica, sans-serif;
 }
 
 .italico{
@@ -46,6 +75,29 @@ body {
 a.lita{
   color: white;
   font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
+  transition: all 0.3s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+}
+
+a.lita:hover{
+  font-size: 2.2rem;
+  text-shadow: 0px 0px 9px rgb(255, 255, 255);
+}
+
+
+
+p#Medium.Name{
+  cursor: pointer;
+  font-size: 4rem;
+}
+
+p#Normal.Name{
+  cursor: pointer;
+  font-size: 3.8rem;
+}
+
+p#Light.Name{
+  cursor: pointer;
+  font-size: 3.6rem;
 }
 
 .container {
@@ -55,12 +107,13 @@ a.lita{
   animation: openUp 2s cubic-bezier(0.5, 0.15, 0.000, 1.000);
 }
 
-::-webkit-scrollbar{
-  width: 0;
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 
 .accordion {
+  margin-top:-1px;
   border-color: rgb(255, 255, 255);
   border-style: solid;
   border-width: 2px;
@@ -79,11 +132,12 @@ a.lita{
 }
 
 #subbtitles{
+  font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background-color: black;
   border: none;
   position: relative;
@@ -99,13 +153,13 @@ a.lita{
 
 #subbpanel {
   border-style: solid;
-  border-width: 2px; /* Adjust the width as needed */
+  border-width: 2px;
   border-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
   border-image-slice: 1;
 }
 
 #subbtext{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 #subbarrow{
@@ -120,18 +174,18 @@ a.lita{
 }
 
 .arrow {
-  margin-right: 70px; /* Push the arrow to the right */
+  margin-right: 70px;
 }
 
 .arrow img {
-  width: 40px; /* Adjust size as needed */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 1s ease; /* Add transition for rotation */
+  width: 40px;
+  height: auto;
+  transition: transform 1s ease;
 }
 
 .active .arrow img {
-  transform: rotate(180deg); /* Rotate the image when active */
-  transform-origin: center; /* Set transform origin to the center */
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 
 
@@ -160,6 +214,36 @@ a.lita{
 .accordion:hover {
   background-color: #111111;
 }
+
+.imaginer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.animated-image {
+  max-width: 80%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+
+  opacity: 0;
+  transform: scaleY(0);
+  animation: fadeIn 2s ease forwards;
+}
+
+.boxer {
+  background-image: url('POP_Square_Transparent.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
 
 
 @keyframes openUp {
@@ -199,13 +283,14 @@ a.lita{
 .sliding-menu {
   position: fixed;
   top: 0;
-  right: 0; /* Changed from 'left' to 'right' */
+  right: 0;
   width: 100%;
   height: 0;
-  background-color: #7c7c7c;
+  background-color: black;
   overflow: hidden;
   transition: height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
   z-index: 999;
+  
 }
 
 .menu-content {
@@ -213,27 +298,10 @@ a.lita{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  width: 80%;
+
 }
 
-.menu-content nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-content nav ul li {
-  margin-bottom: 10px;
-}
-
-.menu-content nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-/* Add styles for the 'X' icon */
 .burger-menu.open .line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -263,3 +331,165 @@ a.lita{
   z-index: 99999;
 }
 
+#photo{
+  margin-top:45px;
+  margin-bottom:45px;
+}
+
+#reading-progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 6px;
+  border-radius: 50px;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+  z-index: 80;
+  transition: height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  transform-origin: bottom;
+}
+
+.reading-progress {
+  height: 100% !important;
+}
+
+@media (max-width: 1024px) {
+  #reading-progress-bar {
+    width: 3px;
+  }
+  
+  .circle{
+    display: none;
+  }
+
+  .panel p {
+    font-size: 1.5rem;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+
+  .panel {
+    padding: 0 40px;
+  }
+
+  .Name {
+    font-size: 3.5rem;
+  }
+
+  .accordion{
+    height: 11vh;
+  }
+
+  .arrow {
+    margin-right: 20px;
+  }
+
+  .arrow img {
+    width: 20px;
+  }
+
+  #subbtext{
+    font-size: 1.2rem;
+  }
+
+  #subbpanel{
+    border-width: 1.5px;
+  }
+  
+  #subbtitles{
+    font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+  }
+
+  a.lita:hover{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle{
+    display: none;
+  }
+
+  .panel p {
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  p#Medium.Name{
+    font-size: 2rem;
+  }
+
+  p#Normal.Name{
+    font-size: 1.8rem;
+  }
+
+  p#Light.Name{
+    font-size: 1.6rem;
+  }
+
+  .panel {
+    padding: 0 10px;
+  }
+
+  .Name {
+    font-size: 2.5rem;
+  }
+
+  .accordion{
+    height: 80px;
+    border-width: 1px;
+  }
+
+  .arrow {
+    margin-right: 10px;
+  }
+
+  #subbtext{
+    font-size: 1rem;
+  }
+
+  #subbpanel{
+    border-width: 1.5px;
+  }
+  
+  #subbtitles{
+    font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+  }
+
+  a.lita:hover{
+    font-size: 1.5rem;
+  }
+
+  .animated-image {
+    margin-top:7rem;
+  }
+}
+
+.notion-quote {
+  background-color: #000000;
+  border-left: 4px solid #ffffff;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+.notion-quote p {
+  margin: 0;
+}
+
+.notion-quote cite {
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
