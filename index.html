@@ -3,27 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="lol.png">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Augustas Armalis</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" href="Pfp.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      <h1>Under Development</h1>
-      <p>The website is currently in development.</p>
-      <p>Stay tuned!</p>
-      <div class="loader"></div>
-      <div class="contacts">
-        <a href="newsletter/index.html" class="action_btn">News Letter</a>
-        <a href="https://www.instagram.com/augustas_armalis/" target="_blank">Instagram</a>
-        <a href="" target="_blank">Twitter</a>
-        <a href="https://www.facebook.com/augustasarmalis/" target="_blank">Facebook</a>
-      </div>
+
+
+  <div class="circle"></div>
+
+  <div class="decontainer" style="box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.1); -webkit-box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.1); -moz-box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.1); border-radius: 0.2em;">
+    <img src="Pfp.png" style="width: 40%; height: auto; margin-top: 2rem; border-radius: 0.2em;">
+
+    <p class="Name" id="Strong" style="margin-top: 10px; margin-bottom: 20px; padding-left: 10px; padding-right: 10px;">Augustas Armalis</p>
+    <p class="Name" id="Normal" style="margin-bottom: 10px; padding-left: 20px; padding-right: 20px;">The website is currently in development</p>
+    <p class="Name" id="Light" style="margin-bottom: 20px;"><i>Stay tuned!</i></p>
+
+    <div class="button-container">
+      <button onclick="openNewssletter()" class="kakalis"><span class="boldo">Newsletter</span></button>
+      <button onclick="openOffers()" class="kakalis"><span class="boldo">Offers</span></button>
+      <button onclick="openTwitter()" class="kakalis"><span class="boldo">Twitter</span></button>
+    </div>
+
+  </div>
+
+
+  <div class="footer">
+    <div style="display:flex; align-items: center; justify-content: center;">
+      <p>Created by <a href="https://augustasarmalis.com/" target="_blank" style="color: white; text-decoration: none;"><b>Augustas Armalis</b></a></p>
     </div>
   </div>
-      <a href="Team_Seas/teamseas.html" class="action_btn">Team Seas</a>
+
+  <script>
+    function openNewssletter() {
+      window.open("https://augustasarmalis.com/newsletter/", "_blank");
+    }
+  </script>
+
+  <script>
+    function openOffers() {
+      window.open("https://augustasarmalis.com/pop/offers", "_blank");
+    }
+  </script>
+
+  <script>
+    function openTwitter() {
+      window.open("https://x.com/AugustasArmalis?s=20", "_blank");
+    }
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
