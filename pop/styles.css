@@ -54,7 +54,9 @@ img#photo{
   font-family: 'Apple_Medium', Arial, Helvetica, sans-serif;
   background: radial-gradient(circle farthest-corner at center center, #FFFFFF 0%, #000000 100%);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
 }
 
 /* Medium Text */
