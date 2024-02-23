@@ -1,7 +1,7 @@
 html {
   background-color: black;
   color: white;
-  font-family: 'Apple_Regular', Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 @font-face {
@@ -29,91 +29,227 @@ html {
   src: url('SFPRODISPLAYMEDIUM.OTF');
 }
 
-
 body {
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
-  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+
+
+
+/* Scroll down indicator styles */
+.scroll-down {
+  padding-top:10px;
+  position: flex;
+  animation: bounce 2s infinite;
+}
+
+.arrowas {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+
+    margin-right: auto; /* Pushes the arrow to the left */
+    margin-left: auto; /* Pushes the arrow to the right */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(10px);
+  }
+  60% {
+      transform: translateY(5px);
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000; /* adjust as needed */
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* adjust as needed for spacing */
+  z-index: 999; /* ensure the footer appears above other content */
+}
+
+
+
+p#normal.Name{
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes openUp {
+  0% {
+      opacity: 0;
+      transform: scaleY(0);
+  }
+  7% {
+      transform: scaleY(0);
+  }
+  100% {
+      opacity: 1;
+      transform: scaleY(1);
+  }
+}
+
+.box {
+  animation: openUp 2s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 5px;
+  border-right: none;
+  border-left: none;
+  height: 70%;
 }
 
 body.open-menu {
   overflow: hidden;
 }
 
-#Strong{
+img#photo{
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+/* Strong Text */
+#Strong {
   font-family: 'Apple_Medium', Arial, Helvetica, sans-serif;
   background: radial-gradient(circle farthest-corner at center center, #FFFFFF 0%, #000000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari and Chrome */
+  -moz-background-clip: text; /* For Firefox */
+  color: transparent;
+  font-size: 8rem;
 }
 
-#Medium{
+/* Medium Text */
+#Medium {
   font-family: 'Apple_Bold', Arial, Helvetica, sans-serif;
+  font-size: 4rem;
 }
 
-#Normal{
+/* Normal Text */
+#Normal {
   font-family: 'Apple_Regular', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
 
-#Light{
+/* Light Text */
+#Light {
   font-family: 'Apple_Italic', Arial, Helvetica, sans-serif;
 }
 
-.italico{
+/* Italic */
+.italico {
   font-family: 'Apple_Italic', Arial, Helvetica, sans-serif;
 }
 
-.boldo{
+/* Bold */
+.boldo {
   font-family: 'Apple_Bold', Arial, Helvetica, sans-serif;
 }
 
-a.lita{
+.weak{
+  font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
+}
+
+/* Lighter Text */
+a.lita {
   color: white;
   font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
-  transition: all 0.3s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  transition: all 0.5s cubic-bezier(0.5, 0.15, 0.000, 1.000);
 }
 
-a.lita:hover{
+a.lita:hover {
   font-size: 2.2rem;
   text-shadow: 0px 0px 9px rgb(255, 255, 255);
 }
 
-
-
-p#Medium.Name{
+/* Medium Name */
+p#Medium.Name {
   cursor: pointer;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
-p#Normal.Name{
-  cursor: pointer;
-  font-size: 3.8rem;
+/* Normal Name */
+p#Normal.Name {
+  cursor:default;
+  font-size: 3rem;
 }
 
-p#Light.Name{
-  cursor: pointer;
-  font-size: 3.6rem;
+/* Light Name */
+p#Light.Name {
+  cursor:default;
+  font-size: 2rem;
 }
 
-.container {
-  margin: 70px;
+blockquote.notion-quote{
+  margin-bottom:25px;
+}
+
+.decontainer {
+  background-color: rgb(0, 0, 0);
+  margin: 70px auto; /* Center the container horizontally */
   max-width: 1380px;
   width: 90%;
   animation: openUp 2s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 5px;
+  border-right: none;
+  border-left: none;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
   width: 0px;
 }
 
-
+/* Accordion */
 .accordion {
-  margin-top:-1px;
+  margin-top: -1px;
   border-color: rgb(255, 255, 255);
   border-style: solid;
   border-width: 2px;
@@ -126,12 +262,13 @@ p#Light.Name{
   background-color: black;
   color: #ffffff;
   cursor: pointer;
-  height: 13vh;
+  height: 7vh;
   width: 100%;
   transition: background-color 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
+  margin-bottom: 30px;
 }
 
-#subbtitles{
+#subbtitles {
   font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: space-between;
@@ -143,7 +280,7 @@ p#Light.Name{
   position: relative;
   display: flex;
   justify-content: right;
-  gap:10px;
+  gap: 10px;
   align-items: center;
   color: #ffffff;
   cursor: pointer;
@@ -154,20 +291,19 @@ p#Light.Name{
 #subbpanel {
   border-style: solid;
   border-width: 2px;
-  border-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+  border-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
   border-image-slice: 1;
 }
 
-#subbtext{
+#subbtext {
   font-size: 1.5rem;
 }
 
-#subbarrow{
+#subbarrow {
   margin-right: 0px;
 }
 
 .Name {
-  font-size: 5rem;
   margin: 0;
   flex: 1;
   text-align: center;
@@ -188,26 +324,80 @@ p#Light.Name{
   transform-origin: center;
 }
 
-
 .panel {
-  padding: 0 70px;
+  padding: 0 30px;
   background-color: black;
   color: white;
   overflow: hidden;
   transition: max-height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
   max-height: 0;
+  text-align: left;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically by default */
+  align-items: center; /* Center buttons horizontally */
+}
+
+/* Media query for desktop mode */
+@media (min-width: 1024px) {
+  .button-container {
+    flex-direction: row; /* Arrange buttons horizontally on desktop */
+    justify-content: space-around; /* Add space between buttons */
+  }
+}
+
+/* CSS for buttons */
+button.kakalis {
+  font-family: 'Apple_Regular', Arial, Helvetica, sans-serif;
+  padding: 0;
+  width: 80%; /* Make the width relative */
+  max-width: 400px; /* Set a maximum width for the buttons */
+  height: 60px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  border-radius: 0.2em;
+  background-color: white;
+  color: #000;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: ease background-color 0.5s, transform 0.5s, color 0.5s, box-shadow 0.5s;
+  box-shadow: none;
+}
+
+button.kakalis:hover {
+  border: none;
+  transform: scale(1.03);
+  background-color: #ffffff;
+  box-shadow: 0px 0px 30px 5px rgba(255, 255, 255, 0.4);
+}
+
+button.kakalis:active {
+  background-color: #000000;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 2px;
+  border-right: none;
+  border-left: none;
+  color: white;
+  box-shadow: none;
+}
+
+/* Media query for mobile mode */
+@media (max-width: 1023px) {
+  button.kakalis {
+    width: 80%; /* Make buttons take 80% of the container width */
+    max-width: none; /* Remove maximum width for mobile */
+  }
 }
 
 .panel p {
   font-size: 2rem;
   margin-top: 45px;
   margin-bottom: 45px;
-  cursor:default;
-}
-
-
-#subbtitles:hover{
-  background-color: #111111;
+  cursor: default;
 }
 
 
@@ -215,107 +405,18 @@ p#Light.Name{
   background-color: #111111;
 }
 
-.imaginer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.animated-image {
-  max-width: 80%;
-  max-height: 80vh;
-  width: auto;
-  height: auto;
-
-  opacity: 0;
-  transform: scaleY(0);
-  animation: fadeIn 2s ease forwards;
-}
-
-.boxer {
-  background-image: url('POP_Square_Transparent.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-}
-
-
-
 @keyframes openUp {
   0% {
-      opacity: 0;
-      transform: scaleY(0);
+    opacity: 0;
+    transform: scaleY(0);
   }
   7% {
-      transform: scaleY(0);
+    transform: scaleY(0);
   }
   100% {
-      opacity: 1;
-      transform: scaleY(1);
+    opacity: 1;
+    transform: scaleY(1);
   }
-}
-
-
-.burger-menu {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  z-index: 1000;
-  animation: openUp 2s cubic-bezier(0.5, 0.15, 0.000, 1.000);
-}
-
-.line {
-  width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-  margin: 6px auto;
-  transition: all 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
-}
-
-.sliding-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 0;
-  background-color: black;
-  overflow: hidden;
-  transition: height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
-  z-index: 999;
-  
-}
-
-.menu-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-
-}
-
-.burger-menu.open .line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger-menu.open .line:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.open .line:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.sliding-menu.open {
-  height: 100vh;
 }
 
 .circle {
@@ -331,34 +432,94 @@ p#Light.Name{
   z-index: 99999;
 }
 
-#photo{
-  margin-top:45px;
-  margin-bottom:45px;
+
+@media (max-width: 1024px) {
+  body {
+    display: flex;
+    align-items: flex-start; /* Align content to the top vertically */
+    height: 100%; /* Ensure body takes up full viewport height */
+    flex-direction: column; /* Stack elements vertically */
+  }
 }
 
-#reading-progress-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 0;
-  width: 6px;
-  border-radius: 50px;
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
-  z-index: 80;
-  transition: height 1s cubic-bezier(0.5, 0.15, 0.000, 1.000);
-  transform-origin: bottom;
+@media (min-width: 1024px) {
+  .decontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.reading-progress {
-  height: 100% !important;
+@media (max-width: 1023px) {
+
+
+  .decontainer {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .decontainer {
+    display: inline-block; /* Change from default block to inline-block */
+  }
+}
+
+@media (max-width: 1023px) {
+  .decontainer {
+    display: block; /* Change back to block for vertical stacking */
+  }
 }
 
 @media (max-width: 1024px) {
+
+  #Strong {
+    font-size: 2.5rem;
+  }
+
+  .footer {
+    position: fixed; /* Set position to fixed */
+    bottom: 0; /* Position at the bottom of the screen */
+    left: 0;
+    width: 100%;
+    background-color: #000000; /* adjust as needed */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* adjust as needed for spacing */
+    z-index: 999; /* ensure the footer appears above other content */
+  }
+
+  button.kakalis {
+    width: 93%;
+    height: 70px;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+  *{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  input, textarea, button, select, a{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  a:focus, a:visited, a:active{
+    outline: none;
+  }
+
   #reading-progress-bar {
     width: 3px;
   }
-  
-  .circle{
+
+  .circle {
     display: none;
   }
 
@@ -376,7 +537,7 @@ p#Light.Name{
     font-size: 3.5rem;
   }
 
-  .accordion{
+  .accordion {
     height: 11vh;
   }
 
@@ -388,45 +549,64 @@ p#Light.Name{
     width: 20px;
   }
 
-  #subbtext{
+  #subbtext {
     font-size: 1.2rem;
   }
 
-  #subbpanel{
+  #subbpanel {
     border-width: 1.5px;
   }
-  
-  #subbtitles{
+
+  #subbtitles {
     font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
     font-size: 1rem;
   }
 
-  a.lita:hover{
+  a.lita:hover {
     font-size: 1.5rem;
+  }
+
+  .custom-video__control {
+    font-size: 1em;
   }
 }
 
 @media (max-width: 480px) {
-  .circle{
+
+  .decontainer{
+    margin-top:45px;
+    border-width: 2px;
+  }
+
+  button.kakalis {
+    width: 95%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+  body {
+    flex-direction: column;
+}
+  .circle {
     display: none;
   }
 
   .panel p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 25px;
     margin-bottom: 25px;
   }
 
-  p#Medium.Name{
+  p#Medium.Name {
     font-size: 2rem;
   }
 
-  p#Normal.Name{
-    font-size: 1.8rem;
+  p#Normal.Name {
+    font-size: 1.5rem;
   }
 
-  p#Light.Name{
-    font-size: 1.6rem;
+  p#Light.Name {
+    font-size: 1rem;
   }
 
   .panel {
@@ -437,8 +617,8 @@ p#Light.Name{
     font-size: 2.5rem;
   }
 
-  .accordion{
-    height: 80px;
+  .accordion {
+    height: auto;
     border-width: 1px;
   }
 
@@ -446,51 +626,24 @@ p#Light.Name{
     margin-right: 10px;
   }
 
-  #subbtext{
+  #subbtext {
     font-size: 1rem;
   }
 
-  #subbpanel{
+  #subbpanel {
     border-width: 1.5px;
   }
-  
-  #subbtitles{
+
+  #subbtitles {
     font-family: 'Apple_Thin_Italic', Arial, Helvetica, sans-serif;
     font-size: 1rem;
   }
 
-  a.lita:hover{
+  a.lita:hover {
     font-size: 1.5rem;
   }
 
   .animated-image {
-    margin-top:7rem;
+    margin-top: 7rem;
   }
 }
-
-.notion-quote {
-  background-color: #000000;
-  border-left: 4px solid #ffffff;
-  padding: 10px 20px;
-  margin: 20px 0;
-}
-
-.notion-quote p {
-  margin: 0;
-}
-
-.notion-quote cite {
-  font-style: italic;
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
