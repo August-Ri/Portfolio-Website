@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Gallery</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/2570/PNG/512/image_icon_153794.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="circle"></div>
+
+    <div id="landing">
+        <p>Infinite Gallery</p>
+    </div>
+
+    <div id="image-gallery">
+        <!-- Images will be dynamically added here -->
+    </div>
+
+    <div class="loading" id="loading" style="margin-bottom: 20px;">Loading...</div>
+
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="navigation-btn prev-btn" onclick="navigate(-1)">&lt;</button>
+        <img id="modalImage" onclick="navigate(1)">
+        <button class="navigation-btn next-btn" onclick="navigate(1)">&gt;</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

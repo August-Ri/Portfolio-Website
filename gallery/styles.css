@@ -1,0 +1,237 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #050908;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.circle {
+    --circle-size: 40px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 999;
+}
+
+p {
+    color: white;
+    font-size: 8rem;
+    z-index: 10;
+    font-weight: bold;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+#landing {
+    height: 100vh;
+    background: url('https://source.unsplash.com/random/1920x1080') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    font-size: 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+#landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.image-container {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.6s forwards, fadeIn 0.6s forwards;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: relative;
+    border-radius: 8px;
+    background: #000;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.modal {
+    z-index:60;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.modal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards 0.5s;
+}
+
+.navigation-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 999;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.loading {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+    .circle{
+        display: none;
+    }
+
+    p{
+        font-size: 4rem;
+    }
+}
