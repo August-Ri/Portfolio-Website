@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation using GSAP || HTML CSS & JAVASCRIPT</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="animation hidden">Nubalis</div>
+    <div class="txt">Kas skaitys, tas gaidys</div>
+    <div class="link">
+        <ul class="ul">
+            <li><a href="">Mygtukas</a></li>
+            <li><a href="">Mygtukas</a></li>
+        </ul>
+    </div>
+    <script>
+        // Delay before animation starts
+        setTimeout(() => {
+            const text = document.querySelector('.animation');
+            text.classList.remove('hidden'); // Remove the 'hidden' class to reveal the text
+            // Rest of your animation code here...
+            const textContent = text.textContent;
+            text.textContent = '';
+            let i = 0;
+            const typewriter = setInterval(() => {
+                text.textContent += textContent[i];
+                i++;
+                if (i >= textContent.length) {
+                    clearInterval(typewriter);
+                    const tl = gsap.timeline();
+                    tl.to(".animation", {
+                        fontSize: "30px",
+                        position: "absolute",
+                        height: "100px",
+                        width: "150px",
+                        duration: 1, // Reduced duration for smoother appearance
+                        opacity: 1, // Make it smoothly appear
+                        delay: 1 // Delay before other animations start
+                    });
+                    tl.to(".txt", {
+                        opacity: 1,
+                        duration: 1,
+                        stagger: .25
+                    });
+                    tl.to(".ul", {
+                        opacity: 1,
+                        duration: 1,
+                        stagger: .25
+                    });
+                }
+            }, 100); // Adjust the interval (in milliseconds) for the typing speed
+        }, 1000); // Adjust the delay (in milliseconds) before the animation starts
+    </script>
+</body>
+</html>
