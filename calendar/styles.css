@@ -15,6 +15,10 @@
     background: black;
     overflow: hidden;
   }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+}
   
   .calendar {
     height: 32rem;
