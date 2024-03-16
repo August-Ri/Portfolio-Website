@@ -299,6 +299,14 @@
       opacity: 1;
     }
   }
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
   
   /* Media Query for smaller screens */
   @media only screen and (max-width: 500px) {
@@ -310,7 +318,7 @@
       max-width: 500px;
       border-radius: 15px;
       height: auto;
-      max-height: 500px;
+      max-height: 70%;
     }
   
     .calendar-days div {
