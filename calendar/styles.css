@@ -193,11 +193,12 @@
   
   .date-time-formate {
     height: 4rem;
-    width: 100%;
+    width: 80%;
+    margin-left: 40px;
     font-family: Dubai Light, Century Gothic;
     position: relative;
     display: flex;
-    top: 50px;
+    top: 30px;
     justify-content: center;
     align-items: center;
   }
