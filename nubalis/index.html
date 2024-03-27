@@ -1,63 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Augustas Armalis</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="animation hidden">Augustas Armalis</div>
-    <div class="txt">Web-Developer, Designer (graphic, motion). <br> smth... with a twist</div>
-    <div class="link">
-        <ul class="ul">
-            <li><a href="">About</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Courses</a></li>
-            <li><a href="">FAQs</a></li>
-            <li><a href="">Contacts</a></li>
-        </ul>
+<style>
+    .Ellipse1 {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        background: #A6A4C2;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(200px); /* Adjust blur value as needed */
+        transition: transform 0.1s ease; /* Smooth transition */
+    }
+</style>
+
+
+
+<div class="Frame" style="width: 1920px; height: 1080px; position: relative; background: black">
+    <video class="DustBackground" style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute" autoplay loop muted>
+        <source src="Dust and Scratches Black and white Screen Pack 4K -- Free download overlay.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="GridBackground" style="width: 2047px; height: 2727px; left: -64px; top: 0px; position: absolute">
+      <div class="VerticalLines" style="width: 1372px; height: 2716px; left: 338px; top: 0px; position: absolute">
+        <div class="Line2" style="width: 2716px; height: 0px; left: 0px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
+        <div class="Line3" style="width: 2716px; height: 0px; left: 275px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
+        <div class="Line4" style="width: 2716px; height: 0px; left: 549px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
+        <div class="Line5" style="width: 2716px; height: 0px; left: 823px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
+        <div class="Line6" style="width: 2716px; height: 0px; left: 1097px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
+        <div class="Line7" style="width: 2716px; height: 0px; left: 1372px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
+      </div>
+      <div class="HorizontalLines" style="width: 2047px; height: 2441px; left: 0px; top: 286px; position: absolute">
+        <div class="Line2" style="width: 2047px; height: 0px; left: 0px; top: 1097px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line3" style="width: 2047px; height: 0px; left: 0px; top: 822px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line4" style="width: 2047px; height: 0px; left: 0px; top: 548px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line5" style="width: 2047px; height: 0px; left: 0px; top: 274px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line6" style="width: 2047px; height: 0px; left: 0px; top: 0px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line2" style="width: 2047px; height: 0px; left: 0px; top: 2441px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line3" style="width: 2047px; height: 0px; left: 0px; top: 2166px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line4" style="width: 2047px; height: 0px; left: 0px; top: 1892px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line5" style="width: 2047px; height: 0px; left: 0px; top: 1618px; position: absolute; border: 1px #181818 solid"></div>
+        <div class="Line6" style="width: 2047px; height: 0px; left: 0px; top: 1344px; position: absolute; border: 1px #181818 solid"></div>
+      </div>
     </div>
-    <script>
-        // Delay before animation starts
-        setTimeout(() => {
-            const text = document.querySelector('.animation');
-            text.classList.remove('hidden'); // Remove the 'hidden' class to reveal the text
-            // Rest of your animation code here...
-            const textContent = text.textContent;
-            text.textContent = '';
-            let i = 0;
-            const typewriter = setInterval(() => {
-                text.textContent += textContent[i];
-                i++;
-                if (i >= textContent.length) {
-                    clearInterval(typewriter);
-                    const tl = gsap.timeline();
-                    tl.to(".animation", {
-                        fontSize: "30px",
-                        position: "absolute",
-                        height: "100px",
-                        width: "150px",
-                        duration: 1, // Reduced duration for smoother appearance
-                        opacity: 1, // Make it smoothly appear
-                        delay: 1 // Delay before other animations start
-                    });
-                    tl.to(".txt", {
-                        opacity: 1,
-                        duration: 1,
-                        stagger: .25
-                    });
-                    tl.to(".ul", {
-                        opacity: 1,
-                        duration: 1,
-                        stagger: .25
-                    });
-                }
-            }, 100); // Adjust the interval (in milliseconds) for the typing speed
-        }, 1000); // Adjust the delay (in milliseconds) before the animation starts
-    </script>
-</body>
-</html>
+    <div class="Ellipse1"></div>
+    <div class="Group1" style="width: 1027px; height: 244px; left: 611px; top: 238px; position: absolute">
+      <div class="Digital" style="left: 0px; top: 50px; position: absolute; color: white; font-size: 150px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">digital</div>
+      <div class="Design" style="left: 407px; top: 0px; position: absolute; color: white; font-size: 200px; font-family: NewYork; font-weight: 400; word-wrap: break-word">Design</div>
+    </div>
+    <div class="Group2" style="width: 944px; height: 244px; left: 217px; top: 403px; position: absolute">
+      <div class="That" style="left: 697px; top: 53px; position: absolute; color: white; font-size: 150px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">that</div>
+      <div class="Agency" style="left: 0px; top: 0px; position: absolute; color: white; font-size: 200px; font-family: NewYork; font-weight: 400; word-wrap: break-word">Agency</div>
+    </div>
+    <div class="Group3" style="width: 1011px; height: 244px; left: 561px; top: 599px; position: absolute">
+      <div class="Impact" style="left: 581px; top: 50px; position: absolute; color: white; font-size: 150px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">impact</div>
+      <div class="Crafts" style="left: 0px; top: 0px; position: absolute; color: white; font-size: 200px; font-family: NewYork; font-weight: 400; word-wrap: break-word">Crafts</div>
+    </div>
+    <div class="Group4" style="width: 60px; height: 26px; left: 1830px; top: 30px; position: absolute">
+      <div class="Rectangle1" style="width: 60px; height: 3px; left: 0px; top: 0px; position: absolute; background: white"></div>
+      <div class="Rectangle2" style="width: 60px; height: 3px; left: 0px; top: 23px; position: absolute; background: white"></div>
+    </div>
+    <div class="ArmalisAgency" style="left: 30px; top: 30px; position: absolute; color: white; font-size: 25px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">Armalis Agency</div>
+    
+    <div class="Line9" style="width: 943px; height: 0px; left: 1646px; top: 843px; position: absolute; transform: rotate(180deg); transform-origin: 0 0; border: 3px white solid"></div>
+    <div class="SkipTheHuntForPriceyDesignAndWebsiteSolutions" style="left: 779px; top: 867px; position: absolute; color: #A6A4C2; font-size: 40px; font-family: SF Pro Display; font-style: italic; font-weight: 300; word-wrap: break-word">Skip the hunt for pricey design and website solutions</div>
+  </div>
+
+  
+
+  <script>
+    document.addEventListener('mousemove', function(e) {
+        const ellipse = document.querySelector('.Ellipse1');
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const ellipseWidth = ellipse.offsetWidth;
+        const ellipseHeight = ellipse.offsetHeight;
+        const newX = mouseX - ellipseWidth / 2;
+        const newY = mouseY - ellipseHeight / 2;
+        ellipse.style.transform = `translate(${newX}px, ${newY}px)`;
+    });
+</script>
+  <style>body{ background-color: black;
+  }</style>
