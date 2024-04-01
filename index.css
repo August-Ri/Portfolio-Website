@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "NewYork";
+  src: url("fonts/new_york/NewYork\ PERSONAL\ USE.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sf";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYREGULAR.OTF") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  background-size: 10rem 10rem;
+  background-image:
+    linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+}
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: inherit;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.agency {
+  font-size: 8rem;
+  color: white;
+  font-family: "NewYork", Arial, sans-serif;
+}
+
+.dev{
+  font-size: 3rem;
+  color: white;
+  font-family: "Sf", Arial, sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .agency {
+    font-size: 3rem;
+    color: white;
+    font-family: "NewYork", Arial, sans-serif;
+  }
+  
+  .dev{
+    font-size: 1rem;
+    color: white;
+    font-family: "Sf", Arial, sans-serif;
+  }
+
+}
