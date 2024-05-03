@@ -1,81 +1,65 @@
-<style>
-    .Ellipse1 {
-        width: 300px;
-        height: 300px;
-        position: absolute;
-        background: #A6A4C2;
-        border-radius: 50%;
-        pointer-events: none;
-        filter: blur(200px); /* Adjust blur value as needed */
-        transition: transform 0.1s ease; /* Smooth transition */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Kodai</title>
+</head>
+<body>
+    <h1>C++ Kodai</h1>
+
+    <h2>Pirmas C++ Programos Kodas</h2>
+    <pre>
+        <code>
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main() {
+    double a, z;
+    cout &lt;&lt; "Įveskite a: ";
+    cin &gt;&gt; a;
+
+    if (a &gt; 2 &amp;&amp; a &lt; 10) {
+        z = pow(a, 5);
+    } else if (a &gt; 15 &amp;&amp; a &lt;= 20) {
+        z = sqrt(a + 25);
+    } else {
+        cout &lt;&lt; "Įvesti blogi duomenys.";
+        return 1; // Programos pabaiga su klaidos kodu
     }
-</style>
 
+    cout &lt;&lt; "Rezultatas: " &lt;&lt; z &lt;&lt; endl;
+    return 0;
+}
+        </code>
+    </pre>
 
+    <h2>Antras C++ Programos Kodas</h2>
+    <pre>
+        <code>
+#include &lt;iostream&gt;
 
-<div class="Frame" style="width: 1920px; height: 1080px; position: relative; background: black">
-    <video class="DustBackground" style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute" autoplay loop muted>
-        <source src="Dust and Scratches Black and white Screen Pack 4K -- Free download overlay.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="GridBackground" style="width: 2047px; height: 2727px; left: -64px; top: 0px; position: absolute">
-      <div class="VerticalLines" style="width: 1372px; height: 2716px; left: 338px; top: 0px; position: absolute">
-        <div class="Line2" style="width: 2716px; height: 0px; left: 0px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
-        <div class="Line3" style="width: 2716px; height: 0px; left: 275px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
-        <div class="Line4" style="width: 2716px; height: 0px; left: 549px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
-        <div class="Line5" style="width: 2716px; height: 0px; left: 823px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
-        <div class="Line6" style="width: 2716px; height: 0px; left: 1097px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
-        <div class="Line7" style="width: 2716px; height: 0px; left: 1372px; top: 0px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1px #181818 solid"></div>
-      </div>
-      <div class="HorizontalLines" style="width: 2047px; height: 2441px; left: 0px; top: 286px; position: absolute">
-        <div class="Line2" style="width: 2047px; height: 0px; left: 0px; top: 1097px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line3" style="width: 2047px; height: 0px; left: 0px; top: 822px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line4" style="width: 2047px; height: 0px; left: 0px; top: 548px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line5" style="width: 2047px; height: 0px; left: 0px; top: 274px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line6" style="width: 2047px; height: 0px; left: 0px; top: 0px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line2" style="width: 2047px; height: 0px; left: 0px; top: 2441px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line3" style="width: 2047px; height: 0px; left: 0px; top: 2166px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line4" style="width: 2047px; height: 0px; left: 0px; top: 1892px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line5" style="width: 2047px; height: 0px; left: 0px; top: 1618px; position: absolute; border: 1px #181818 solid"></div>
-        <div class="Line6" style="width: 2047px; height: 0px; left: 0px; top: 1344px; position: absolute; border: 1px #181818 solid"></div>
-      </div>
-    </div>
-    <div class="Ellipse1"></div>
-    <div class="Group1" style="width: 1027px; height: 244px; left: 611px; top: 238px; position: absolute">
-      <div class="Digital" style="left: 0px; top: 50px; position: absolute; color: white; font-size: 150px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">digital</div>
-      <div class="Design" style="left: 407px; top: 0px; position: absolute; color: white; font-size: 200px; font-family: NewYork; font-weight: 400; word-wrap: break-word">Design</div>
-    </div>
-    <div class="Group2" style="width: 944px; height: 244px; left: 217px; top: 403px; position: absolute">
-      <div class="That" style="left: 697px; top: 53px; position: absolute; color: white; font-size: 150px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">that</div>
-      <div class="Agency" style="left: 0px; top: 0px; position: absolute; color: white; font-size: 200px; font-family: NewYork; font-weight: 400; word-wrap: break-word">Agency</div>
-    </div>
-    <div class="Group3" style="width: 1011px; height: 244px; left: 561px; top: 599px; position: absolute">
-      <div class="Impact" style="left: 581px; top: 50px; position: absolute; color: white; font-size: 150px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">impact</div>
-      <div class="Crafts" style="left: 0px; top: 0px; position: absolute; color: white; font-size: 200px; font-family: NewYork; font-weight: 400; word-wrap: break-word">Crafts</div>
-    </div>
-    <div class="Group4" style="width: 60px; height: 26px; left: 1830px; top: 30px; position: absolute">
-      <div class="Rectangle1" style="width: 60px; height: 3px; left: 0px; top: 0px; position: absolute; background: white"></div>
-      <div class="Rectangle2" style="width: 60px; height: 3px; left: 0px; top: 23px; position: absolute; background: white"></div>
-    </div>
-    <div class="ArmalisAgency" style="left: 30px; top: 30px; position: absolute; color: white; font-size: 25px; font-family: SF Pro Display; font-weight: 400; word-wrap: break-word">Armalis Agency</div>
-    
-    <div class="Line9" style="width: 943px; height: 0px; left: 1646px; top: 843px; position: absolute; transform: rotate(180deg); transform-origin: 0 0; border: 3px white solid"></div>
-    <div class="SkipTheHuntForPriceyDesignAndWebsiteSolutions" style="left: 779px; top: 867px; position: absolute; color: #A6A4C2; font-size: 40px; font-family: SF Pro Display; font-style: italic; font-weight: 300; word-wrap: break-word">Skip the hunt for pricey design and website solutions</div>
-  </div>
+using namespace std;
 
-  
+int main() {
+    int a, b, c, d;
+    cout &lt;&lt; "Įveskite keturis skaičius: ";
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;
 
-  <script>
-    document.addEventListener('mousemove', function(e) {
-        const ellipse = document.querySelector('.Ellipse1');
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        const ellipseWidth = ellipse.offsetWidth;
-        const ellipseHeight = ellipse.offsetHeight;
-        const newX = mouseX - ellipseWidth / 2;
-        const newY = mouseY - ellipseHeight / 2;
-        ellipse.style.transform = `translate(${newX}px, ${newY}px)`;
-    });
-</script>
-  <style>body{ background-color: black;
-  }</style>
+    if (a &lt; b &amp;&amp; b &lt; c &amp;&amp; c &lt; d) {
+        cout &lt;&lt; "didėja" &lt;&lt; endl;
+    } else if (a &gt; b &amp;&amp; b &gt; c &amp;&amp; c &gt; d) {
+        cout &lt;&lt; "mažėja" &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "išmaišyta" &lt;&lt; endl;
+    }
+
+    return 0;
+}
+        </code>
+    </pre>
+
+</body>
+</html>
